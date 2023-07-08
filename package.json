@@ -1,6 +1,6 @@
 {
   "name": "@edgeware/node-red-ble",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NODE-RED nodes for BLE sensors.",
   "keywords": [
     "node-red"
