@@ -1,0 +1,21 @@
+{
+  "name": "@edgeware/node-red-ble",
+  "version": "0.0.1",
+  "description": "NODE-RED nodes for BLE sensors.",
+  "keywords": [
+    "node-red"
+  ],
+  "author": "Edgeware Technologies",
+  "license": "MIT",
+  "node-red": {
+    "nodes": {
+      "ruuvi": "ruuvi/ruuvi.js",
+      "moko": "moko/moko.js"
+    }
+  },
+  "dependencies": {
+    "luxon": "^3.3.0",
+    "mqtt": "^4.3.7",
+    "uuid": "^9.0.0"
+  }
+}

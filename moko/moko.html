@@ -1,0 +1,59 @@
+<script type="text/javascript">
+  RED.nodes.registerType("moko", {
+    category: "edgeware",
+    color: "#d8bfd8",
+    defaults: {
+      name: { value: "", required: true },
+      address: {
+        value: "",
+        required: true,
+        validate: RED.validators.regex(
+          /^[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}$/
+        ),
+      },
+      model: { value: "" },
+    },
+    inputs: 1,
+    outputs: 2,
+    icon: "bridge.svg",
+    label: function () {
+      return this.name || "moko";
+    },
+    oneditprepare: function () {
+      $("#node-input-model").typedInput({
+        types: [
+          {
+            value: "model",
+            options: [
+              { value: "plug-116B", label: "Plug 116B" },
+              { value: "plug-114B", label: "Plug 114B" },
+            ],
+          },
+        ],
+      });
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="moko">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Sensor Name" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-model"><i class="fa fa-tag"></i> Model</label>
+    <input type="text" id="node-input-model" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-address"><i class="fa fa-tag"></i> Address</label>
+    <input
+      type="text"
+      id="node-input-address"
+      placeholder="AA:BB:CC:DD:EE:FF"
+    />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="moko">
+  <p>A node which handles communication with Moko BLE devices.</p>
+</script>
