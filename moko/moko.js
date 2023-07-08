@@ -21,7 +21,7 @@ module.exports = function (RED) {
     this.model = config.model;
     const node = this;
 
-    const client = mqtt.connect("mqtt://ubuntu.local", {
+    const client = mqtt.connect("mqtt://emqx", {
       clientId: `moko_${node.shortAddress}$`,
       protocolVersion: 5,
     });
